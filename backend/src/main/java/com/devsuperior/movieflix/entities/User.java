@@ -1,8 +1,10 @@
 package com.devsuperior.movieflix.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -15,11 +17,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+
 
 @Entity
 @Table(name = "tb_user")
@@ -30,8 +35,6 @@ public class User implements UserDetails, Serializable{
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Long id;
 		private String name;
-			
-		@Column(unique = true)
 		private String email;
 		private String password;
 		
@@ -42,17 +45,21 @@ public class User implements UserDetails, Serializable{
 				inverseJoinColumns = @JoinColumn(name = "role_id"))
 		private Set<Role> roles = new HashSet<>();
 		
+		@OneToMany(mappedBy = "user")
+		private List<Review> reviews = new ArrayList<>();
+		
+		
 		public User(){	
 			
 		}
 
-		public User(Long id, String name, String email, String password, Set<Role> roles) {
+		public User(Long id, String name, String email, String password) {
 			super();
 			this.id = id;
 			this.name = name;
 			this.email = email;
 			this.password = password;
-			this.roles = roles;
+		
 		}
 
 		public Long getId() {
@@ -94,6 +101,14 @@ public class User implements UserDetails, Serializable{
 
 		public void setRoles(Set<Role> roles) {
 			this.roles = roles;
+		}
+		
+		public List<Review> getReviews() {
+			return reviews;
+		}
+
+		public void setReviews(List<Review> reviews) {
+			this.reviews = reviews;
 		}
 
 		@Override
@@ -150,6 +165,14 @@ public class User implements UserDetails, Serializable{
 		@Override
 		public boolean isEnabled() {
 			return true;
+		}
+		public boolean hasHole(String roleName) {
+			for(Role role : roles) {
+				if(role.getAuthority().equals(roleName)) {
+					return true;
+				}
+			}
+			return false;
 		}
 		
 		

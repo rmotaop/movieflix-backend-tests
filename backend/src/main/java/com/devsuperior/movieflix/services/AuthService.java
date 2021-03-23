@@ -16,7 +16,7 @@ public class AuthService {
 	@Autowired
 	private UserRepository userRepository;
 
-	// Função retornar o usuário logado, utilizaremos para controlar o acesso;
+
 	@Transactional(readOnly = true)
 	public User authenticated() {
 		try {
@@ -27,12 +27,11 @@ public class AuthService {
 		}
 	}
 
-	// Função para verificar se é um usuário MEMBER;
 	public void validateUserMember(Long userId) {
 		User user = authenticated();
-		// Se o usuário autenticado não for MEMBER é negado o acesso;
 		if (!user.hasHole("ROLE_MEMBER")) {
 			throw new ForbiddenException("Acess denied");
 		}
 	}
+	
 }

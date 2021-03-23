@@ -14,6 +14,7 @@ import com.devsuperior.movieflix.DTO.MovieDTO;
 import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.entities.Movie;
 import com.devsuperior.movieflix.entities.Review;
+import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.repositories.GenreRepository;
 import com.devsuperior.movieflix.repositories.MovieRepository;
 import com.devsuperior.movieflix.repositories.ReviewRepository;
@@ -30,11 +31,18 @@ public class MovieService {
 
 	@Autowired
 	private GenreRepository genreRepository;
+	
+	@Autowired
+	private AuthService authService;
 
 	@Transactional(readOnly = true)
 	public MovieDTO findById(Long id) {
 		Optional<Movie> obj = repository.findById(id);
 		Movie movie = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
+		
+		User user = authService.authenticated();
+
+		authService.validateUserMember(user.getId());
 		List<Review> reviews = reviewRepository.findAllByMovieId(movie.getId());
 		return new MovieDTO(movie, reviews);
 	}

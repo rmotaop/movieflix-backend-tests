@@ -31,7 +31,7 @@ import org.springframework.web.filter.CorsFilter;
 
 		private static final String[] PUBLIC = { "/oauth/token", "/h2-console/**" };
 
-		@Override // Configuração para poder analisar se o token é valido;
+		@Override 
 		public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
 			resources.tokenStore(tokenStore);
 		}

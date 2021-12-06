@@ -27,7 +27,7 @@ const CreateAccount = () => {
       email: createAccountData.email,
       password: createAccountData.password,
       roles: [{
-        id: 2 // Por padrão o usuário será membro para que a pessoa possa testar a aplicação
+        id: 2 
       }]
     }
 

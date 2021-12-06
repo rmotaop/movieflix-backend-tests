@@ -16,4 +16,4 @@ const AuthCard = ({ title, children }: Props) => {
   )
 }
 
-export default AuthCard
+export default AuthCard;

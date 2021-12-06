@@ -40,7 +40,7 @@ const Movies: React.FC = () => {
         setGenres(selectedGenres);
     };
 
-    async function fillProducts() {
+    async function fillMovies() {
         const toast = Toast.showLoading("Carregando...");
         setLoading(true);
         const res = await getMovies();
@@ -51,7 +51,7 @@ const Movies: React.FC = () => {
 
     useEffect(() => {
         fillGenres();
-        fillProducts();
+        fillMovies();
     }, []);
 
     const handleChangeGenre = (genreRes: Genre) => {

@@ -2,13 +2,12 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const api = axios.create({
-    baseURL: "https://rmotaop-movieflix.herokuapp.com/"
-    //baseURL: "jdbc:postgresql://localhost:5432/Movieflix"
-    //baseURL: "//localhost:8080"//
+    baseURL: "https://rmotaop-movieflix.herokuapp.com"
 
 })
 
-export const TOKEN = 'Basic ZHNtb3ZpZWZsaXg6ZHNtb3ZpZWZsaXgxMjM='
+export const TOKEN = 'Basic bW92aWVmbGl4Om1vdmllZmxpeDEyMw=='
+   
 
 export async function userToken() {
     const token = AsyncStorage.getItem("@token");
@@ -17,7 +16,7 @@ export async function userToken() {
 
 export async function getMovies() {
     const authToken = await userToken();
-    const res = api.get(`/movies?page=0&linesPerPage=999999999&orderBy=title&direction=ASC&genreId=0`,
+    const res = api.get(`/movies?page=0&linesPerPage=20&orderBy=title&direction=ASC&genreId=0`,
         {
             headers: {
                 Authorization: `Bearer ${authToken}`,

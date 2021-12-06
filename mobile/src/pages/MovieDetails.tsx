@@ -3,7 +3,7 @@ import { View, Text, ActivityIndicator, Image } from 'react-native';
 import { text, theme } from '../styles';
 import { getMovie, insertReview } from '../services';
 import { ScrollView } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/native';
 import ReviewCard from './ReviewCard';
 import ReviewInsertCard from './ReviewInsertCard';
 import { isAllowedByRole } from '../services/auth';
@@ -23,6 +23,7 @@ const MovieDetails = ({ route: { params: { id } } }) => {
 
     const [loading, setLoading] = useState(false);
     const [allowed, setAllowed] = useState(true);
+    const [hasPermission, setHasPermission] = useState(false)
     const [textReview, setTextReview] = useState("");
 
     async function loadMovieData() {
@@ -31,7 +32,7 @@ const MovieDetails = ({ route: { params: { id } } }) => {
         const res = await getMovie(id);
         setMovie(res.data);
         setLoading(false);
-        setAllowed(await isAllowedByRole(['ROLE_MEMBER']));
+        setAllowed(await isAllowedByRole(['ROLE_MEMBER'|| 'ROLE_VISITOR']));
         Toast.hide(toast);
     };
 
@@ -51,7 +52,7 @@ const MovieDetails = ({ route: { params: { id } } }) => {
                     Toast.showSuccess("Avaliação inserida com sucesso");
                     loadMovieData();
                 }).catch(err => {
-                    Toast.show("Erro ao inserir avaliação. Revise use texto ou informe ao administrador o erro: " + err);
+                    Toast.show("Erro ao inserir avaliação. Revise o texto ou informe ao administrador o erro: " + err);
                 });
         } else {
             Toast.show("A avaliação não pode estar em branco.");
@@ -86,11 +87,17 @@ const MovieDetails = ({ route: { params: { id } } }) => {
                                 </ScrollView>
                             </View>
                         </View>
+
+                        
                         {allowed && (
                             <ReviewInsertCard
                                 textReview={textReview}
                                 setTextReview={setTextReview}
-                                handleInsertReview={handleInsertReview} />)}
+                                handleInsertReview={handleInsertReview} 
+                            />)
+                        }
+
+
                         {movie.reviews.length > 0 ?
                             <View style={theme.reviewCard}>
                                 <View style={theme.movieDescription}>

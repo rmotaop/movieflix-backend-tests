@@ -1,1 +1,1 @@
-movieflix-backend-tests
+movieflix-backend

@@ -8,8 +8,8 @@ import arrowBack from '../core/assets/arrowBack.png';
 import { HeaderBackButton } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
-const HeaderText: React.FC = () => <Text style={nav.leftText}>DSMovieflix</Text>
-const HeaderTextOnBackContainer: React.FC = () => <Text style={nav.leftTextOnBackButton}>DSMovieflix</Text>
+const HeaderText: React.FC = () => <Text style={nav.leftText}>Movieflix</Text>
+const HeaderTextOnBackContainer: React.FC = () => <Text style={nav.leftTextOnBackButton}>Movieflix</Text>
 
 const Routes: React.FC = () => {
     return (

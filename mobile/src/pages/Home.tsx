@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { theme, text } from '../styles';
 import seta from '../core/assets/Seta.png';
 import desenho from '../core/assets/Desenho.png';
-import { useNavigation } from '@react-navigation/core';
+import { useNavigation } from "@react-navigation/native";
 
 const Home: React.FC = () => {
     const navigation = useNavigation();

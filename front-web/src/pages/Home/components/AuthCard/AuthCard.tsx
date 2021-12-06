@@ -16,4 +16,8 @@ const AuthCard = ({ title, children }: Props) => {
   )
 }
 
+<<<<<<< HEAD
 export default AuthCard;
+=======
+export default AuthCard
+>>>>>>> 8cbbad5da4c2648a904f11d713e1c3a936e6b25c

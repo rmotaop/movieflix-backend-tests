@@ -10,7 +10,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import com.devsuperior.movieflix.dto.MovieDTO;
+
 import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.entities.Movie;
 import com.devsuperior.movieflix.entities.Review;
@@ -39,10 +41,11 @@ public class MovieService {
 	public MovieDTO findById(Long id) {
 		Optional<Movie> obj = repository.findById(id);
 		Movie movie = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
-		
+	
 		User user = authService.authenticated();
 
 		authService.validateUserMember(user.getId());
+
 		List<Review> reviews = reviewRepository.findAllByMovieId(movie.getId());
 		return new MovieDTO(movie, reviews);
 	}

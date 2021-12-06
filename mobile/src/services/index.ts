@@ -3,6 +3,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const api = axios.create({
     baseURL: "https://rmotaop-movieflix.herokuapp.com/"
+    //baseURL: "jdbc:postgresql://localhost:5432/Movieflix"
+    //baseURL: "//localhost:8080"//
 
 })
 

@@ -5,7 +5,7 @@ import eyesOpened from '../core/assets/eyes-opened.png';
 import eyesClosed from '../core/assets/eyes-closed.png';
 import arrow from '../core/assets/Seta.png';
 import { login, setAsyncKeys } from '../services/auth';
-import { useNavigation } from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/native';
 import Toast from 'react-native-tiny-toast';
 
 const Login: React.FC = () => {

@@ -47,7 +47,7 @@ import org.springframework.web.filter.CorsFilter;
 				.antMatchers(PUBLIC).permitAll()
 				.anyRequest().authenticated();
 
-		http.cors().configurationSource(corsConfigurationSource());
+			http.cors().configurationSource(corsConfigurationSource());
 		}
 
 		@Bean

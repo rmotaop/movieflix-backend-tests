@@ -17,13 +17,13 @@ A user has a name, email, and password, and the email is their username. Each fi
 
 ## Web Application
 <div align="center">
-
   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/login.PNG" width="600" />
+  <br/>
   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/new-acount.PNG" width="600" />
   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/action-movie.PNG" width="600" />
   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/movie-details.PNG" width="600" />
 </div>
-##Mobile 
+## Mobile 
 <div align="center">
    <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/mobile-init.png" width="600" />
    <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/mobile-login.png" width="600" />
@@ -56,11 +56,6 @@ E caso queira, você também pode criar sua própria conta. Por padrão, novas c
 
 ## Modelo Conceitual
 ![Modelo Conceitual](https://github.com/rmotaop/rmotaop-movieflix/blob/main/uml_Movieflix.PNG)
-
-## Documentação da API
-<a href="https://movieflix-rmotaop.herokuapp.com/swagger-ui.html">
-  Swagger
-</a>
 
 # Tecnologias utilizadas
 ## Backend

@@ -23,7 +23,7 @@ A user has a name, email, and password, and the email is their username. Each fi
   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/action-movie.PNG" width="600" />
   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/movie-details.PNG" width="600" />
 </div>
-## Mobile 
+## Mobile App
 <div align="center">
    <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/mobile-init.png" width="600" />
    <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/mobile-login.png" width="600" />

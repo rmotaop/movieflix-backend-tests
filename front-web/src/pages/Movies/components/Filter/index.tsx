@@ -38,6 +38,8 @@ const Filter = ({ genre, handleChangeGenre }: Props) => {
         className="filter-select-container"
         classNamePrefix="genres-select"
         placeholder="Filtrar por gênero"
+        orderBy="name"
+        direction="ASC"
         isClearable
         onChange={ value => handleChangeGenre(value as Genre) }
       />

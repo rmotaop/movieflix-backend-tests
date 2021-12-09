@@ -1,12 +1,13 @@
 import { useState } from "react"
 import { toast } from "react-toastify"
+
 import history from "../../../../../../core/utils/history"
 import { makePrivateRequest } from "../../../../../../core/utils/requests"
 
 import './styles.scss'
 
 type Props = {
-  movieId: string
+  movieId: string;
 }
 
 const SaveReview = ({ movieId }: Props) => {
@@ -24,9 +25,9 @@ const SaveReview = ({ movieId }: Props) => {
       data: payload
     }).then(() => {
       history.push(`/movies`)
-      toast.success('Avaliação salva com sucesso 😄', { delay: 500 })
+      toast.success('Salvo com sucesso 😄', { delay: 500 })
     }).catch(() => {
-      toast.error('Ocorreu um erro ao salvar sua avaliação 😕')
+      toast.error('Erro ao salvar, tente novamente. 😕')
     })
   }
 
@@ -38,7 +39,7 @@ const SaveReview = ({ movieId }: Props) => {
     <div className="post-new-review-container">
       <textarea
         value={ review }
-        placeholder="Digite aqui sua avaliação"
+        placeholder="Digite aqui a sua avaliação"
         className="new-review-text"
         onChange={ handleChangeReviewText }
       />
@@ -47,7 +48,7 @@ const SaveReview = ({ movieId }: Props) => {
         className="new-review-button"
         onClick={ saveReview }
       >
-        <span className="new-review-button-text">Salvar avaliação</span>
+        <span className="new-review-button-text">Salvar Avaliação</span>
       </button>
     </div>
   )

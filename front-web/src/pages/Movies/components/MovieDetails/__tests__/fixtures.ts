@@ -24,8 +24,8 @@ export const movieResponseWithReview = {
       "movieId": 5,
       "user": {
         "id": 1,
-        "name": "Lucas",
-        "email": "lucas@gmail.com",
+        "name": "Ana",
+        "email": "ana@gmail.com",
         "roles": [
           {
             "id": 2,
@@ -40,8 +40,8 @@ export const movieResponseWithReview = {
       "movieId": 5,
       "user": {
         "id": 2,
-        "name": "Bob Brown",
-        "email": "bob@gmail.com",
+        "name": "Ana",
+        "email": "ana@gmail.com",
         "roles": [
           {
             "id": 2,

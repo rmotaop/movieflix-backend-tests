@@ -30,6 +30,7 @@ const Movies: React.FC = () => {
             ...genre,
             label: genre.name,
             value: genre.id,
+            orderBy: genre.name,
             key: genre.id
         }));
     }

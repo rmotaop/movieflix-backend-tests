@@ -25,8 +25,8 @@ export const moviesResponse = {
           "movieId": 2,
           "user": {
             "id": 19,
-            "name": "Lucas",
-            "email": "lucas@gmail.com",
+            "name": "Ana",
+            "email": "ana@gmail.com",
             "roles": [
               {
                 "id": 2,

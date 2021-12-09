@@ -386,7 +386,10 @@ const theme = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 10,
+         
+
     },
+
 
     textArea: {
         width: "100%",
@@ -438,6 +441,7 @@ const nav = StyleSheet.create({
         color: colors.black,
         fontWeight: "bold",
         marginLeft: 50,
+        
     },
 
     leftTextOnBackButton: {
@@ -485,7 +489,7 @@ const pickerSelectStyles = StyleSheet.create({
         borderColor: colors.white,
         borderRadius: 10,
         color: colors.white,
-        paddingRight: 30, // to ensure the text is never behind the icon
+        paddingRight: 30, 
     },
     inputAndroid: {
         height: 80,
@@ -496,7 +500,7 @@ const pickerSelectStyles = StyleSheet.create({
         borderColor: colors.white,
         borderRadius: 10,
         color: colors.black,
-        paddingRight: 30, // to ensure the text is never behind the icon
+        paddingRight: 30, 
     },
 });
 

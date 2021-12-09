@@ -69,3 +69,14 @@ export const isAllowedByRole = (routeRoles: Role[] = []) => {
 
   return routeRoles.some(role => authorities?.includes(role))
 }
+
+export const getAcessTokenDecoded = () => {
+  const sessionData = getSessionData();
+
+  try {
+  const tokenDecoded = jwtDecode(sessionData.access_token);
+  return tokenDecoded as AccessToken;
+  } catch (error) {
+      return {} as AccessToken;
+  }
+}

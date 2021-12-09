@@ -15,9 +15,9 @@ const MovieDetails = ({ route: { params: { id } } }) => {
         id: null,
         title: null,
         synopsis: null,
+        subTitle: null,
         year: null,
         imgUrl: null,
-        subTitle: null,
         reviews: []
     });
 
@@ -27,13 +27,15 @@ const MovieDetails = ({ route: { params: { id } } }) => {
     const [textReview, setTextReview] = useState("");
 
     async function loadMovieData() {
-        const toast = Toast.showLoading("Carregando...");
+        //const toast = Toast.showLoading("Carregando...");
         setLoading(true);
         const res = await getMovie(id);
+        // Toast.hide(toast);
         setMovie(res.data);
+       
         setLoading(false);
-        setAllowed(await isAllowedByRole(['ROLE_MEMBER'|| 'ROLE_VISITOR']));
-        Toast.hide(toast);
+            
+       
     };
 
     useEffect(() => {
@@ -52,17 +54,19 @@ const MovieDetails = ({ route: { params: { id } } }) => {
                     Toast.showSuccess("Avaliação inserida com sucesso");
                     loadMovieData();
                 }).catch(err => {
-                    Toast.show("Erro ao inserir avaliação. Revise o texto ou informe ao administrador o erro: " + err);
+                    Toast.show("Erro ao inserir avaliação. Revise o texto ou informe ao administrador.");
                 });
         } else {
             Toast.show("A avaliação não pode estar em branco.");
         }
     }
 
+
     return (
         <View style={theme.container}>
-            {loading ? (<ActivityIndicator size="large" />) :
-                (
+             
+             {
+                          
                     <ScrollView>
                         <View style={theme.detailCard}>
                             <Text style={text.movieTitleDetails}>
@@ -87,17 +91,13 @@ const MovieDetails = ({ route: { params: { id } } }) => {
                                 </ScrollView>
                             </View>
                         </View>
-
+                
                         
-                        {allowed && (
                             <ReviewInsertCard
                                 textReview={textReview}
                                 setTextReview={setTextReview}
                                 handleInsertReview={handleInsertReview} 
-                            />)
-                        }
-
-
+                            />                      
                         {movie.reviews.length > 0 ?
                             <View style={theme.reviewCard}>
                                 <View style={theme.movieDescription}>
@@ -112,7 +112,7 @@ const MovieDetails = ({ route: { params: { id } } }) => {
                             </View> : null
                         }
                     </ScrollView>
-                )
+                
             }
         </View>
     )

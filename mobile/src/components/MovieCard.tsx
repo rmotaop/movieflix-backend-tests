@@ -15,7 +15,9 @@ const MovieCard: React.FC<MovieProps> = ({ id, imgUrl, title, subTitle, year }) 
     const navigation = useNavigation();
     return (
         <View style={theme.movieCard}>
-            <Image source={{ uri: imgUrl }} style={theme.movieImg} />
+            <Image source={{ uri: imgUrl }} style={theme.movieImg} 
+            
+            />
             <View style={theme.movieDescription}>
                 <Text style={text.movieTitle}>
                     {title}
@@ -29,7 +31,8 @@ const MovieCard: React.FC<MovieProps> = ({ id, imgUrl, title, subTitle, year }) 
             </View>
             <TouchableOpacity style={theme.detailsBtn} onPress={() => 
                 navigation.navigate("MovieDetails", { id })}>
-                <Text style={text.detailsBtnTxt}>Ver detalhes</Text>
+                <Text style={text.detailsBtnTxt}>Ver detalhes  
+                </Text>
             </TouchableOpacity>
         </View>
     )

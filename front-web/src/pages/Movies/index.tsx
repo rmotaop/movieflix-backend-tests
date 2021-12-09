@@ -20,7 +20,7 @@ const Movies = () => {
     const params = {
       linesPerPage: 12,
       genreId: genre?.id,
-      page: activePage
+      page: activePage      
     }
 
     makePrivateRequest({ url: '/movies', params })

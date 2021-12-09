@@ -8,6 +8,6 @@ test('should render ListReview', () => {
   )
 
   expect(screen.getByTestId('star-image')).toBeInTheDocument()
-  expect(screen.getByText('Lucas')).toBeInTheDocument()
+  expect(screen.getByText('Ana')).toBeInTheDocument()
   expect(screen.getByText('Gostei demais desse filme!!!')).toBeInTheDocument()
 })

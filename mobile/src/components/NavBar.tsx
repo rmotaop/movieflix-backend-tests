@@ -1,41 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import { Text, TouchableOpacity } from 'react-native';
-import { nav, text } from '../styles';
+import React, { useEffect, useState } from "react";
+import { Text, TouchableOpacity } from "react-native";
+import { nav, text } from "../styles";
 import { useNavigation } from "@react-navigation/native";
-import { doLogout, isAuthenticated } from '../services/auth';
-
+import { doLogout, isAuthenticated } from "../services/auth";
 
 const NavBar: React.FC = () => {
+  const [authenticated, setAuthenticated] = useState(false);
 
-    const [authenticated, setAuthenticated] = useState(false);
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
-    async function logged() {
-        const result = await isAuthenticated();
-        result ? setAuthenticated(true) : setAuthenticated(false);
-    }
+  async function logged() {
+    const result = await isAuthenticated();
+    result ? setAuthenticated(true) : setAuthenticated(false);
+  }
 
-    function logout() {
-        doLogout();
-        navigation.navigate("Login");
-    }
+  function logout() {
+    doLogout();
+    navigation.navigate("Login");
+  }
 
-    useEffect(() => {
-        logged();
-    }, []);
+  useEffect(() => {
+    logged();
+  }, []);
 
-    return (
-        <>
-            {
-                authenticated ? (
-                    <TouchableOpacity style={nav.logoutBtn} onPress={() => logout()}>
-                        <Text style={text.logoutText}>Sair</Text>
-                    </TouchableOpacity>
-                ) : null
-            }
-        </>
-    )
-
-}
+  return (
+    <>
+      {authenticated ? (
+        <TouchableOpacity style={nav.logoutBtn} onPress={() => logout()}>
+          <Text style={text.logoutText}>Sair</Text>
+        </TouchableOpacity>
+      ) : null}
+    </>
+  );
+};
 
 export default NavBar;

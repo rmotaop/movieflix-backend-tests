@@ -17,10 +17,10 @@ A user has a name, email, and password, and the email is their username. Each fi
 
 
 <div align="center">
-  <img src="https://github.com/rmotaop/assets/blob/main/movieflix/login.png" width="600" />
-  <img src="https://github.com/rmotaop/assets/blob/main/movieflix/new-acount.png" width="600" />
-  <img src="https://github.com/rmotaop/assets/blob/main/movieflix/action-movie.png" width="600" />
-  <img src="https://github.com/rmotaop/assets/blob/main/movieflix/movie-details.png" width="600" />
+  <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/login.PNG" width="600" />
+  <img src="https://github.com/rmotaop/rmotaop-movieflix/assets/blob/main/movieflix/new-acount.png" width="600" />
+  <img src="https://github.com/rmotaop/rmotaop-movieflix/assets/blob/main/movieflix/action-movie.png" width="600" />
+  <img src="https://github.com/rmotaop/rmotaop-movieflix/assets/blob/main/movieflix/movie-details.png" width="600" />
 
 </div>
 
@@ -50,7 +50,7 @@ Link para a aplicação no netlify -> <a href="https://rmotaop-movieflix.netlify
 E caso queira, você também pode criar sua própria conta. Por padrão, novas contas criadas terão o perfil de membro (MEMBER) para que seja possível testar a funcionalidade de postar avaliações.
 
 ## Modelo Conceitual
-![Modelo Conceitual](https://github.com/rmotaop/assets/blob/main/movieflix/uml_Movieflix.png)
+![Modelo Conceitual](https://github.com/rmotaop/rmotaop-movieflix/blob/main/uml_Movieflix.PNG)
 
 ## Documentação da API
 <a href="https://movieflix-rmotaop.herokuapp.com/swagger-ui.html">

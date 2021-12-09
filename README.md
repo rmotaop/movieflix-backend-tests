@@ -17,11 +17,15 @@ A user has a name, email, and password, and the email is their username. Each fi
 
 
 <div align="center">
+## Web Application
   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/login.PNG" width="600" />
-  <img src="https://github.com/rmotaop/rmotaop-movieflix/assets/blob/main/movieflix/new-acount.png" width="600" />
-  <img src="https://github.com/rmotaop/rmotaop-movieflix/assets/blob/main/movieflix/action-movie.png" width="600" />
-  <img src="https://github.com/rmotaop/rmotaop-movieflix/assets/blob/main/movieflix/movie-details.png" width="600" />
+  <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/new-acount.PNG" width="600" />
+  <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/action-movie.PNG" width="600" />
+  <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/movie-details.PNG" width="600" />
 
+##Mobile 
+   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/mobile-init.png" width="600" />
+   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/mobile-login.png" width="600" />
 </div>
 
 # Portugues Brasileiro - Sobre o Projeto:

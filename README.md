@@ -15,15 +15,16 @@ When you select a movie from the listing, a detailpage is shown, where you can s
 A user has a name, email, and password, and the email is their username. Each film has a title, subtitle, an image, release year, synopsis, and a genre. Member users can record reviews for movies. A single member user can leave more than one rating for the same movie.
 
 
-
-<div align="center">
 ## Web Application
+<div align="center">
+
   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/login.PNG" width="600" />
   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/new-acount.PNG" width="600" />
   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/action-movie.PNG" width="600" />
   <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/movie-details.PNG" width="600" />
-
+</div>
 ##Mobile 
+<div align="center">
    <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/mobile-init.png" width="600" />
    <img src="https://github.com/rmotaop/rmotaop-movieflix/blob/main/assets/mobile-login.png" width="600" />
 </div>
